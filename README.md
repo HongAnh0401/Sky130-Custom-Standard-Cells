@@ -1,4 +1,4 @@
-Sky130 Custom Standard Cells
+-- Sky130 Custom Standard Cells
 
 This project focuses on designing and optimizing custom standard cells using the Sky130 Open PDK. The objective is to improve propagation delay by adjusting transistor sizing and transistor-level circuit structures while maintaining compatibility with ASIC design flows.
 
