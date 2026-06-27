@@ -31,10 +31,12 @@ The design flow includes **schematic design** in **Xschem**, Simulation using **
 The project currently evaluate custom versions of INV1, NAND2, and NOR2 cells, since when NAND2 nand NOR2 has it N/Pmos conectivity in series, lead to big values of Parasitics R,C and delays. In that case, the method is detecting worst-case of Rise/Fall delays and optimize:
 ## NAND2_1
 <img width="817" height="377" alt="image" src="https://github.com/user-attachments/assets/ceed58ad-c739-44b1-b873-de2cd1da6979" />
+
 ## NOR2_1
-<img width="808" height="366" alt="image" src="https://github.com/user-attachments/assets/548ec116-7555-4eea-8787-408e81d2e890" />
+<img width="780" height="335" alt="image" src="https://github.com/user-attachments/assets/9026029e-60a9-4a7c-a4c4-214e99d07827" />
 
 # MAGIC LAYOUT
+
 ## INV_1
 <img width="539" height="705" alt="Screenshot from 2026-03-10 11-51-35" src="https://github.com/user-attachments/assets/6eecdc13-a353-49e3-bda5-eb89fa9299d2" />
 
