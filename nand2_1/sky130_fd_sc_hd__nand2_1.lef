@@ -1,0 +1,93 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO sky130_fd_sc_hd__nand2_1
+  CLASS CORE ;
+  FOREIGN sky130_fd_sc_hd__nand2_1 ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 1.380 BY 2.720 ;
+  SITE unithd ;
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
+    PORT
+      LAYER li1 ;
+        RECT 0.945 0.950 1.235 1.280 ;
+    END
+  END A
+  PIN B
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.247500 ;
+    PORT
+      LAYER li1 ;
+        RECT 0.105 1.030 0.435 1.275 ;
+    END
+  END B
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER li1 ;
+        RECT 0.095 0.295 0.425 0.775 ;
+        RECT 0.175 0.085 0.345 0.295 ;
+        RECT 0.000 -0.085 1.380 0.085 ;
+      LAYER met1 ;
+        RECT 0.000 -0.240 1.380 0.240 ;
+    END
+  END VGND
+  PIN VNB
+    DIRECTION INOUT ;
+    USE GROUND ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER pwell ;
+        RECT 0.025 0.780 1.355 0.935 ;
+        RECT 0.025 0.775 0.095 0.780 ;
+        RECT 0.175 0.775 0.345 0.780 ;
+        RECT 0.425 0.775 0.775 0.780 ;
+        RECT 0.025 0.195 1.355 0.775 ;
+        RECT 0.025 -0.125 0.555 0.195 ;
+        RECT 0.760 0.105 0.910 0.195 ;
+    END
+  END VNB
+  PIN VPB
+    DIRECTION INOUT ;
+    USE POWER ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER nwell ;
+        RECT -0.190 1.510 1.570 2.910 ;
+        RECT -0.045 1.255 1.425 1.510 ;
+    END
+  END VPB
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER li1 ;
+        RECT 0.000 2.635 1.380 2.805 ;
+        RECT 0.095 1.445 0.345 2.635 ;
+        RECT 1.035 1.450 1.285 2.635 ;
+      LAYER met1 ;
+        RECT 0.000 2.480 1.380 2.960 ;
+    END
+  END VPWR
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.453000 ;
+    PORT
+      LAYER li1 ;
+        RECT 0.525 1.495 0.855 2.425 ;
+        RECT 0.605 0.775 0.775 1.495 ;
+        RECT 0.605 0.295 1.215 0.775 ;
+    END
+  END Y
+END sky130_fd_sc_hd__nand2_1
+END LIBRARY
+

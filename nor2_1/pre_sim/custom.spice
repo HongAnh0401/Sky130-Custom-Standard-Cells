@@ -1,0 +1,52 @@
+** sch_path: /home/daohonganh/Desktop/nor2_1/nor2_1_sim.sch
+**.subckt nor2_1_sim
+x1 VDD VDD A B Y GND GND nor2_1
+V1 VDD GND 1.8
+VA A GND PULSE(0 1.8 100p 50p 50p 100p 1n)
+VB B GND PULSE(0 1.8 1000p 50p 50p 350p 0.6n)
+**** begin user architecture code
+
+
+*SLEW
+.measure tran trise TRIG v(Y) VAL=0.18 RISE=1 TARG v(Y) VAL=1.62 RISE=1
+.measure tran tfall TRIG v(Y) VAL=1.62 FALL=1 TARG v(Y) VAL=0.18 FALL=1
+
+*DELAY
+.measure tran tpHL TRIG v(A) VAL=0.9 RISE=1 TARG v(Y) VAL=0.9 FALL=1
+.measure tran tpLH TRIG v(A) VAL=0.9 FALL=1 TARG v(Y) VAL=0.9 RISE=1
+.tran 1p 5n
+.control
+run
+plot v(A) v(B) v(Y)
+.endc
+.end
+
+
+
+
+.lib /home/daohonganh/Desktop/chip_design/pdk/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt_mm
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  nor2_1.sym # of pins=7
+** sym_path: /home/daohonganh/Desktop/nor2_1/nor2_1.sym
+** sch_path: /home/daohonganh/Desktop/nor2_1/nor2_1.sch
+.subckt nor2_1 VPWR VPB A B Y VNB VGND
+*.ipin A
+*.ipin B
+*.opin Y
+*.iopin VPWR
+*.iopin VGND
+*.iopin VPB
+*.iopin VNB
+XM1 Y B VGND VNB sky130_fd_pr__nfet_01v8 L=0.15 W=0.45
+XM2 net1 A VPWR VPB sky130_fd_pr__pfet_01v8 L=0.15 W=1.08
+XM3 Y B net1 VPB sky130_fd_pr__pfet_01v8 L=0.15 W=1.08
+XM4 Y A VGND VNB sky130_fd_pr__nfet_01v8 L=0.15 W=0.45
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.end

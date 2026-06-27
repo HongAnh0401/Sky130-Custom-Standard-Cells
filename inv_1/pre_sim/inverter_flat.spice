@@ -1,0 +1,7 @@
+* NGSPICE file created from inverter_flat.ext - technology: sky130A
+
+.subckt sky130_fd_sc_hd__inv_1 A VGND VNB VPB VPWR Y
+X0 Y A VPWR VPB sky130_fd_pr__pfet_01v8 w=1.05 l=0.15
+X1 Y A VGND VNB sky130_fd_pr__nfet_01v8 w=0.45 l=0.15
+.ends
+

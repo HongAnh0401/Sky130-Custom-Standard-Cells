@@ -1,0 +1,58 @@
+scale 1000 1 500000
+rnode "VPWR" 0 0 31 527 0
+rnode "VPWR.t0" 0 0 194 389 0
+rnode "VPWR.n0" 0 0 230 544 0
+rnode "VPWR" 0 0 48 527 0
+resist "VPWR" "VPWR.n0" 0.000623793
+resist "VPWR.n0" "VPWR" 0.0225115
+resist "VPWR.n0" "VPWR.t0" 350.862
+rnode "A.t1" 0 0 179 389 0
+rnode "A.t0" 0 0 179 92 0
+rnode "A.n0" 0 0 222 193 0
+rnode "A" 0 0 213 221 0
+resist "A.n0" "A.t0" 133.194
+resist "A" "A.n0" 165.876
+resist "A.n0" "A.t1" 285.828
+rnode "VPB.t1" 0 0 179 389 0
+rnode "VPB.t0" 0 0 107 389 0
+rnode "VPB" 0 0 28 527 0
+rnode "VPB" 0 0 45 561 0
+resist "VPB" "VPB" 54.7458
+resist "VPB" "VPB.t0" 199.661
+resist "VPB.t0" "VPB.t1" 202.967
+rnode "VNB.t1" 0 0 179 92 0
+rnode "VNB.t0" 0 0 93 92 0
+rnode "VNB" 0 0 28 -17 0
+rnode "VNB" 0 0 45 17 0
+resist "VNB" "VNB" 255.29
+resist "VNB" "VNB.t0" 720.819
+resist "VNB.t0" "VNB.t1" 1291.47
+rnode "Y.t1" 0 0 92 389 0
+rnode "Y.t2" 0 0 164 92 0
+rnode "Y.t0" 0 0 108 92 0
+rnode "Y.n0" 0 0 136 92 0
+rnode "Y" 0 0 121 221 0
+resist "Y.n0" "Y.t0" 37.3333
+resist "Y.n0" "Y.t2" 37.3333
+resist "Y" "Y.n0" 225.351
+resist "Y" "Y.t1" 391.36
+rnode "VGND.t1" 0 0 194 92 0
+rnode "VGND.t0" 0 0 78 92 0
+rnode "VGND.n0" 0 0 46 0 0
+rnode "VGND" 0 0 29 -17 0
+rnode "nor2_1" 0 0 0 0 0
+resist "nor2_1" "VGND" 0.0377604
+resist "VGND" "VGND.n0" 0.474752
+resist "VGND.n0" "VGND.t0" 252.745
+resist "VGND.n0" "VGND.t1" 252.852
+rnode "B.t0" 0 0 93 92 0
+rnode "B.t1" 0 0 107 389 0
+rnode "B.n0" 0 0 64 190 0
+rnode "B" 0 0 29 221 0
+resist "B.n0" "B.t0" 125.874
+resist "B" "B.n0" 186.113
+resist "B.n0" "B.t1" 319.459
+device msubckt sky130_fd_pr__pfet_01v8 164 281 165 282  "VPB.t1" "A.t1" 60 0 "a_122_281#" 216 4536,258 "VPWR.t0" 216 11448,538
+device msubckt sky130_fd_pr__nfet_01v8 164 47 165 48  "VNB.t1" "A.t0" 60 0 "Y.t2" 90 2520,146 "VGND.t1" 90 4770,286
+device msubckt sky130_fd_pr__pfet_01v8 92 281 93 282  "VPB.t0" "B.t1" 60 0 "Y.t1" 216 11448,538 "a_122_281#" 216 4536,258
+device msubckt sky130_fd_pr__nfet_01v8 78 47 79 48  "VNB.t0" "B.t0" 60 0 "VGND.t0" 90 4770,286 "Y.t0" 90 2520,146

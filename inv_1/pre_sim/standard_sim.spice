@@ -1,0 +1,34 @@
+
+
+.lib /home/daohonganh/Desktop/chip_design/pdk/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+.include /home/daohonganh/Desktop/chip_design/pdk/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+XINV A VGND VGND VPWR VPWR Y sky130_fd_sc_hd__inv_1
+
+* Power supply
+VDD  VPWR 0 1.8
+VSS  VGND 0 0
+
+* Power supply
+VDD2  VPB 0 1.8
+VSS2  VNB 0 0
+
+* Input stimulus
+VIN A 0 PULSE(0 1.8 0 50p 50p 200p 2n)
+
+*SLEW
+.measure tran trise TRIG v(Y) VAL=0.18 RISE=1 TARG v(Y) VAL=1.62 RISE=1
+
+.measure tran tfall TRIG v(Y) VAL=1.62 FALL=1 TARG v(Y) VAL=0.18 FALL=1
+
+*DELAY
+.measure tran tpHL TRIG v(A) VAL=0.9 RISE=1 TARG v(Y) VAL=0.9 FALL=1
+.measure tran tpLH TRIG v(A) VAL=0.9 FALL=1 TARG v(Y) VAL=0.9 RISE=1
+
+.tran 1p 2n
+.control
+run
+plot v(A) v(Y)
+.endc
+.end
+.end
